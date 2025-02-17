@@ -1,18 +1,15 @@
-#!/usr/bin/env python3
-
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
-from std_msgs.msg import Float32
+from custom_msgs.msg import OpenSpace  # Import the custom message
 import math
 
 class OpenSpacePublisher(Node):
     def __init__(self):
         super().__init__('open_space_publisher')
 
-        # Create publishers for distance and angle
-        self.distance_publisher = self.create_publisher(Float32, 'open_space/distance', 10)
-        self.angle_publisher = self.create_publisher(Float32, 'open_space/angle', 10)
+        # Create a publisher for the OpenSpace custom message
+        self.publisher = self.create_publisher(OpenSpace, 'open_space', 10)
 
         # Create subscription to the 'fake_scan' topic
         self.subscription = self.create_subscription(
@@ -36,15 +33,13 @@ class OpenSpacePublisher(Node):
         # angle = angle_min + (index * angle_increment)
         angle = scan_msg.angle_min + (max_index * scan_msg.angle_increment)
 
-        # Publish the longest range
-        distance_msg = Float32()
-        distance_msg.data = max_range
-        self.distance_publisher.publish(distance_msg)
+        # Create an instance of the custom message and populate it
+        open_space_msg = OpenSpace()
+        open_space_msg.angle = angle  # Ensure angle is before distance as required
+        open_space_msg.distance = max_range
 
-        # Publish the corresponding angle (in radians)
-        angle_msg = Float32()
-        angle_msg.data = angle
-        self.angle_publisher.publish(angle_msg)
+        # Publish the OpenSpace message
+        self.publisher.publish(open_space_msg)
 
         # Optionally, log info (convert angle to degrees just for easy reading)
         self.get_logger().info(
