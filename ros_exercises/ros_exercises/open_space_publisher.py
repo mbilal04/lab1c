@@ -8,13 +8,21 @@ class OpenSpacePublisher(Node):
     def __init__(self):
         super().__init__('open_space_publisher')
 
-        # Create a publisher for the OpenSpace custom message
-        self.publisher = self.create_publisher(OpenSpace, 'open_space', 10)
+        # Declare ROS parameters with default values
+        self.declare_parameter('subscriber_topic', 'fake_scan')
+        self.declare_parameter('publisher_topic', 'open_space')
 
-        # Create subscription to the 'fake_scan' topic
+        # Get parameters
+        self.subscriber_topic = self.get_parameter('subscriber_topic').get_parameter_value().string_value
+        self.publisher_topic = self.get_parameter('publisher_topic').get_parameter_value().string_value
+
+        # Create a publisher for the OpenSpace custom message
+        self.publisher = self.create_publisher(OpenSpace, self.publisher_topic, 10)
+
+        # Create subscription to the specified topic
         self.subscription = self.create_subscription(
             LaserScan,
-            'fake_scan',
+            self.subscriber_topic,
             self.scan_callback,
             10
         )
@@ -30,7 +38,6 @@ class OpenSpacePublisher(Node):
         max_index = scan_msg.ranges.index(max_range)
 
         # Calculate the angle corresponding to the max range
-        # angle = angle_min + (index * angle_increment)
         angle = scan_msg.angle_min + (max_index * scan_msg.angle_increment)
 
         # Create an instance of the custom message and populate it

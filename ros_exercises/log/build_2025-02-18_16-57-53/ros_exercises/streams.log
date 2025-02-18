@@ -1,0 +1,30 @@
+[0.500s] Invoking command in '/home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises': PYTHONPATH=/home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises/prefix_override:/home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises/build --no-deps install_data
+[0.605s] running develop
+[0.658s] running egg_info
+[0.660s] creating ros_exercises.egg-info
+[0.661s] writing ros_exercises.egg-info/PKG-INFO
+[0.663s] writing dependency_links to ros_exercises.egg-info/dependency_links.txt
+[0.664s] writing entry points to ros_exercises.egg-info/entry_points.txt
+[0.665s] writing requirements to ros_exercises.egg-info/requires.txt
+[0.666s] writing top-level names to ros_exercises.egg-info/top_level.txt
+[0.669s] writing manifest file 'ros_exercises.egg-info/SOURCES.txt'
+[0.687s] reading manifest file 'ros_exercises.egg-info/SOURCES.txt'
+[0.690s] writing manifest file 'ros_exercises.egg-info/SOURCES.txt'
+[0.711s] running build_ext
+[0.713s] Creating /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/python3.8/site-packages/site.py
+[0.723s] Creating /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/python3.8/site-packages/ros-exercises.egg-link (link to .)
+[0.728s] Installing fake_scan_publisher script to /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/ros_exercises
+[0.728s] Installing open_space_publisher script to /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/ros_exercises
+[0.730s] Installing simple_publisher script to /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/ros_exercises
+[0.732s] Installing simple_subscriber script to /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/ros_exercises
+[0.737s] 
+[0.737s] Installed /home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises
+[0.737s] running install_data
+[0.738s] creating /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ament_index
+[0.738s] creating /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ament_index/resource_index
+[0.739s] creating /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ament_index/resource_index/packages
+[0.740s] copying resource/ros_exercises -> /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ament_index/resource_index/packages
+[0.741s] copying package.xml -> /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ros_exercises
+[0.754s] creating /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ros_exercises/launch
+[0.754s] copying launch/my_first_launch.launch.xml -> /home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/share/ros_exercises/launch
+[0.772s] Invoked command in '/home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises' returned '0': PYTHONPATH=/home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises/prefix_override:/home/racecar/racecar_ws/src/lab1c/ros_exercises/install/ros_exercises/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/racecar/racecar_ws/src/lab1c/ros_exercises/build/ros_exercises/build --no-deps install_data

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Launch Simple Publisher -->
+    <node pkg="ros_exercises" exec="simple_publisher" name="simple_publisher" output="screen"/>
+
+    <!-- Launch Simple Subscriber -->
+    <node pkg="ros_exercises" exec="simple_subscriber" name="simple_subscriber" output="screen"/>
+
+    <!-- Launch Fake Scan Publisher -->
+    <node pkg="ros_exercises" exec="fake_scan_publisher" name="fake_scan_publisher" output="screen"/>
+
+    <!-- Launch Open Space Publisher -->
+    <node pkg="ros_exercises" exec="open_space_publisher" name="open_space_publisher" output="screen"/>
+
+</launch>
