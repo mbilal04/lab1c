@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import setup
 
 package_name = 'ros_exercises'
@@ -10,6 +12,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        # 👇 This line ensures launch files are installed
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.xml')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,6 +28,6 @@ setup(
         'simple_subscriber = ros_exercises.simple_subscriber:main',
         'fake_scan_publisher = ros_exercises.fake_scan_publisher:main',
         'open_space_publisher = ros_exercises.open_space_publisher:main '
-    ],
+    ],xs
 },
 )
