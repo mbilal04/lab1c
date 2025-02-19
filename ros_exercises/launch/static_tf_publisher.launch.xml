@@ -1,5 +1,9 @@
 <launch>
 
+    <!-- Static TF Publisher for base_link -> left_cam and left_cam -> right_cam -->
     <node pkg="ros_exercises" exec="static_tf_cam_publisher" name="static_tf_cam_publisher" output="screen"/>
+
+    <!-- Dynamic TF Publisher for computing odom -> base_link_2 -->
+    <node pkg="ros_exercises" exec="base_link_tf_pub" name="base_link_tf_pub" output="screen"/>
 
 </launch>
